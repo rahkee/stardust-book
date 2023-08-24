@@ -1,11 +1,13 @@
 html {
-    font-family: 'Libre Baskerville', serif;
 }
 
 body {
-    background-color: black;
-    text-align: center;
-    color: white;
+    background-color: #2c2456;
+}
+
+img {
+    display: inline-block;
+    width: 100%;
 }
 
 h1,
@@ -14,5 +16,37 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Libre Baskerville', serif;
     font-weight: 400;
+}
+
+.modal-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    background-image: url('../images/modal-frame-bottom.png'),
+        url('../images/modal-frame-top.png'), url('../images/bg-modal.png');
+    background-size: 100%, 100%, 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom, center top, center top;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-width: 480px;
+    max-width: 720px;
+
+    .modal-frame-bg,
+    .modal-frame-top,
+    .modal-frame-bottom,
+    .modal-content {
+        grid-column: ~'1 / -1';
+        grid-row: ~'1 / -1';
+    }
+
+    .modal-content {
+        padding: 48px;
+    }
 }
