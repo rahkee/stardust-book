@@ -48,22 +48,33 @@ p {
 }
 
 main {
-    margin: 0 auto;
-    max-width: 1024px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 48px 48px 24px;
+.bg-sky,
+.bg-stars,
+.star-cliff {
+    grid-column: ~'1 / -1';
+    grid-row: ~'1 / -1';
+    height: 100vh;
+}
 
-    h2 {
-        line-height: 1.4;
-        max-width: 550px;
+.bg-sky {
+    img {
+        object-fit: cover;
+        object-position: bottom;
+        height: 100vh;
     }
 }
 
-section {
-    padding: 48px;
+// .star-cliff {
+//     align-self: flex-end;
+// }
+
+.bg-stars {
+    // transform: scale(2);
 }
