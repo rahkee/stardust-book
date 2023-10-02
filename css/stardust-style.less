@@ -53,9 +53,16 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     overflow: hidden;
+
+    &.journey-begins {
+        .bg-sky img {
+            transform: scale(1.026) translateY(24px);
+        }
+    }
 }
 
 .bg-sky,
+.begin-the-journey-container,
 .bg-stars,
 .star-cliff {
     grid-column: ~'1 / -1';
@@ -64,10 +71,16 @@ main {
 }
 
 .bg-sky {
+    z-index: -1;
+
     img {
         object-fit: cover;
         object-position: bottom;
         height: 100vh;
+        transform: scale(1.026) translateY(0);
+
+        transform-origin: center bottom;
+        transition: transform 1s ease-in-out;
     }
 }
 
