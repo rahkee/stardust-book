@@ -1,3 +1,5 @@
+@parallax: 1;
+
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 62.5%;
@@ -55,27 +57,27 @@ main {
 
     &.journey-begins {
         .bg-sky img {
-            transform: scale(1.2) translateY(6px);
+            transform: scale(1.2) translateY(4px * @parallax);
         }
 
         .stars-5-xs img {
-            transform: scale(1.2) translateY(12px);
+            transform: scale(1.2) translateY(8px * @parallax);
         }
 
         .stars-4-sm img {
-            transform: scale(1.2) translateY(18px);
+            transform: scale(1.2) translateY(12px * @parallax);
         }
 
         .stars-3-md img {
-            transform: scale(1.2) translateY(24px);
+            transform: scale(1.2) translateY(16px * @parallax);
         }
 
         .stars-2-lg img {
-            transform: scale(1.2) translateY(30px);
+            transform: scale(1.2) translateY(20px * @parallax);
         }
 
         .stars-1-xl img {
-            transform: scale(1.2) translateY(36px);
+            transform: scale(1.2) translateY(24px * @parallax);
         }
 
         .stardust-title img {
@@ -83,27 +85,27 @@ main {
         }
 
         .dragonfly-1 img {
-            transform: translateY(132px);
+            transform: translateY(60px * @parallax);
         }
 
         .star-cliff img {
-            transform: translateY(72px);
+            transform: translateY(84px * @parallax);
         }
 
         .butterfly img {
-            transform: translateY(264px);
+            transform: translateY(168px * @parallax);
         }
 
         .dragonfly-2 img {
-            transform: translateY(264px);
+            transform: translateY(168px * @parallax);
         }
 
         // .flowers-left img {
-        //     transform: translateX(-12px) translateY(132px);
+        //     transform: translateX(-12px) translateY(132px * @parallax);
         // }
 
         // .flowers-right img {
-        //     transform: translateX(15px) translateY(132px);
+        //     transform: translateX(15px) translateY(132px * @parallax);
         // }
     }
 }
