@@ -1,6 +1,8 @@
 // TODO: Switch images to fixed values instead of %
 
-@parallax: 10;
+@parallax: 1;
+@pre-scale: 1.2;
+@post-scale: @pre-scale * 1;
 
 html {
     font-family: 'Open Sans', sans-serif;
@@ -59,27 +61,27 @@ main {
 
     &.journey-begins {
         .bg-sky img {
-            transform: scale(1.2) translateY(4px * @parallax);
+            transform: scale(@post-scale) translateY(4px * @parallax);
         }
 
         .stars-5-xs img {
-            transform: scale(1.2) translateY(8px * @parallax);
+            transform: scale(@post-scale) translateY(8px * @parallax);
         }
 
         .stars-4-sm img {
-            transform: scale(1.2) translateY(12px * @parallax);
+            transform: scale(@post-scale) translateY(12px * @parallax);
         }
 
         .stars-3-md img {
-            transform: scale(1.2) translateY(16px * @parallax);
+            transform: scale(@post-scale) translateY(16px * @parallax);
         }
 
         .stars-2-lg img {
-            transform: scale(1.2) translateY(20px * @parallax);
+            transform: scale(@post-scale) translateY(20px * @parallax);
         }
 
         .stars-1-xl img {
-            transform: scale(1.2) translateY(24px * @parallax);
+            transform: scale(@post-scale) translateY(24px * @parallax);
         }
 
         .stardust-title img {
@@ -87,19 +89,19 @@ main {
         }
 
         .dragonfly-1 img {
-            transform: translateY(60px * @parallax);
+            transform: translateY(24px * @parallax);
         }
 
         .star-cliff img {
-            transform: translateY(84px * @parallax);
+            transform: translateY(60px * @parallax);
         }
 
         .butterfly img {
-            transform: translateY(168px * @parallax);
+            transform: translateY((172px * 1.5) * @parallax);
         }
 
         .dragonfly-2 img {
-            transform: translateY(168px * @parallax);
+            transform: translateY(132px * @parallax);
         }
 
         // .flowers-left img {
@@ -129,16 +131,26 @@ main {
 
 .bg-sky {
     z-index: -1;
-}
 
-.bg-sky,
-.bg-stars {
     img {
+        height: 100vh;
         object-fit: cover;
         object-position: bottom;
+        transform: scale(@pre-scale) translateY(0);
+        transform-origin: center;
+        transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100%;
+    }
+}
+
+.bg-stars {
+    transform: translateY(-75px);
+    img {
         height: 100vh;
-        transform: scale(1.2) translateY(0);
-        transform-origin: center bottom;
+        object-fit: cover;
+        object-position: top;
+        transform: scale(@pre-scale) translateY(0);
+        transform-origin: center;
         transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
         width: 100%;
     }
@@ -147,15 +159,15 @@ main {
 .stardust-title {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     z-index: 1;
 
     img {
-        transform: translateY(100px);
         transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 1s;
+        transform: translateY(-10vw);
         opacity: 0;
-        width: 75%;
+        width: min(1024px, 100%);
     }
 }
 
@@ -167,7 +179,7 @@ main {
 
     img {
         transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 25%;
+        width: min(192px, 25%);
     }
 }
 
@@ -178,7 +190,7 @@ main {
 
     img {
         transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 75%;
+        width: min(720px, 100%);
     }
 }
 
@@ -190,17 +202,20 @@ main {
 
     img {
         transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(36px);
+        transform: translateY(172px);
+        width: min(248px, 33%);
     }
 }
 
 .dragonfly-2 {
     display: flex;
     align-items: center;
+    transform: translateY(96px);
     z-index: 1;
 
     img {
         transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+        width: min(192px, 33%);
     }
 }
 
