@@ -1,6 +1,6 @@
 // TODO: Switch images to fixed values instead of %
 
-@parallax: 1;
+@parallax: 10;
 @pre-scale: 1.2;
 @post-scale: @pre-scale * 1;
 
@@ -224,7 +224,6 @@ main {
     img {
         transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 1s;
-        transform: translateY(min(-150px, -10vw));
         opacity: 0;
         width: min(1024px, 100%);
     }
@@ -232,7 +231,6 @@ main {
     a {
         transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 2s;
-        transform: translateY(min(-150px, -10vw));
         display: flex;
         justify-content: center;
         align-items: center;
