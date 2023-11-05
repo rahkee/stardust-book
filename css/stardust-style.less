@@ -51,6 +51,20 @@ p {
     padding: 0 24px;
 }
 
+.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    opacity: 1;
+
+    &.hide {
+        opacity: 0;
+    }
+}
+
 main {
     display: grid;
     height: 100vh;
@@ -84,7 +98,7 @@ main {
         }
 
         .dragonfly-1 img {
-            transform: translateY(24px * @parallax);
+            transform: translateY(45px * @parallax);
         }
 
         .star-cliff img {
